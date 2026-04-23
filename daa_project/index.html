@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Queens Visualizer | DAA Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="header">
+                <h1>N-Queens</h1>
+                <p class="subtitle">Backtracking Visualizer</p>
+            </div>
+
+            <div class="controls card">
+                <div class="control-group">
+                    <label for="boardSize">Board Size (N): <span id="nValue">8</span></label>
+                    <input type="range" id="boardSize" min="4" max="12" value="8">
+                </div>
+
+                <div class="control-group">
+                    <label for="speed">Animation Speed</label>
+                    <input type="range" id="speed" min="1" max="100" value="50">
+                </div>
+
+                <div class="button-group">
+                    <button id="startBtn" class="primary-btn">Visualize</button>
+                    <button id="resetBtn" class="secondary-btn">Reset</button>
+                </div>
+            </div>
+
+            <div class="stats card">
+                <h3>Algorithm Stats</h3>
+                <div class="stat-item">
+                    <span>Recursive Calls:</span>
+                    <span id="calls">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Conflicts Found:</span>
+                    <span id="conflicts">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Status:</span>
+                    <span id="status" class="status-idle">Idle</span>
+                </div>
+            </div>
+
+            <div class="legend card">
+                <h3>Legend</h3>
+                <div class="legend-item"><div class="dot current"></div> Current Cell</div>
+                <div class="legend-item"><div class="dot valid"></div> Valid Placement</div>
+                <div class="legend-item"><div class="dot conflict"></div> Conflict</div>
+            </div>
+        </aside>
+
+        <main class="visualizer">
+            <div id="board" class="board"></div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
